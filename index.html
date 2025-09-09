@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de usuario</title>
+    <link rel="shortcut icon" href="assets/images/Logo.jpg" type="images/x-icon">
+
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f7f7f7;
+            background-image: url(assets/images/fondo2.jpg);
+            background-repeat: repeat;
+            background-size: auto;
+        }
+
+        body h1,
+        body h2 {
+            color: #8b4513;
+        }
+
+        .interactiveElements {
+            color: #2e8b57;
+        }
+
+        .oferts {
+            color: #ffd700;
+        }
+
+        .txtPrimary {
+            color: #333333;
+        }
+
+        .txtSecondary {
+            color: #666666;
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-success">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><img src="assets/images/Logo.jpeg" alt="Logo" width="30" height="24"
+                        class="d-inline-block align-text-top">Huerto Hogar</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Productos</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Registro</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Ingresar</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="container" id="Registro">
+            <div class="row mt-3">
+                <div class="col-xl-12"><!--Registro-->
+                    <h2 class="text-center">Autentificador</h2>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Correo Electronico</label>
+                        <input type="text" class="form-control" id="Correo_Electronico" maxlength="15" 
+                            aria-describedby="emailHelp">
+                        <p id="error_correo" style="color: red; margin-top: 10px; display: none;">* Debe ingresar un
+                            Correo Electronico</p>
+                        <p id="error_correo_valido" style="color: red; margin-top: 10px; display: none;">* correo
+                            ingresado no es valido</p>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Password</label>
+                        <input type="text" class="form-control" id="Password" maxlength="10"
+                            aria-describedby="emailHelp">
+                        <p id="error_password" style="color: red; margin-top: 10px; display: none;">* Debe ingresar un
+                            Password</p>
+                        <p id="error_password_valido" style="color: red; margin-top: 10px; display: none;">* Password
+                            ingresado no es valido</p>
+                    </div>
+                    <button type="button" class="btn btn-success"
+                        onclick="validarCorreo(), validarPassword(), validarPasswordrp()">Registrarse</button>
+                    <button type="button" class="btn btn-warning"
+                        onclick="limpiarCorreo(), limpiarPassword(), limpiarPasswordrp()">Limpiar</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer></footer>
+
+    <script>
+        function validarCorreo() {
+
+            var regexCorreo = /^[a-zA-Z ]+$/;
+            var txtCorreo = document.getElementById("Correo_Electronico").value;
+            const maxLength = 10;
+
+            if (regexCorreo.test(txtCorreo)) {
+                console.log("Correo mal escrito");
+                document.getElementById("error_correo_valido").style.display = 'none';
+            } else {
+                console.log("Correo bien escrito");
+                document.getElementById("error_correo_valido").style.display = 'block';
+            }
+
+            if (document.getElementById("Correo_Electronico").value == '') {
+                console.log("Campo vacio")
+                document.getElementById("error_correo").style.display = 'block';
+            } else {
+                document.getElementById("error_correo").style.display = 'none';
+            }
+
+        } function validarPassword() {
+
+            var regexPassword = /^[a-zA-Z ]+$/;
+            var txtPassword = document.getElementById("Password").value;
+
+            if (regexPassword.test(txtPassword)) {
+                console.log("password mal escrito");
+                document.getElementById("error_password_valido").style.display = 'none';
+            } else {
+                console.log("password bien escrito");
+                document.getElementById("error_password_valido").style.display = 'block';
+            }
+
+            if (document.getElementById("Password").value == '') {
+                console.log("Campo vacio")
+                document.getElementById("error_password").style.display = 'block';
+            } else {
+                document.getElementById("error_password").style.display = 'none';
+            }
+        }
+
+        function limpiarCorreo() {
+            document.getElementById("Correo_Electronico").value = "";
+        } function limpiarPassword() {
+            document.getElementById("Password").value = "";
+        } function limpiarPasswordrp() {
+            document.getElementById("Repetir_Password").value = "";
+        }
+
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
