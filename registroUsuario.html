@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de inicio - Huerto Hogar</title>
+    <link rel="shortcut icon" href="assets/images/Logo.jpeg" type="image/x-icon">
+
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+    <!-- HEADER CON LOGO CENTRADO -->
+    <header class="text-center my-3">
+        <img src="assets/images/Logo.jpeg" alt="Logo" class="logo">
+        <nav class="navbar navbar-expand-lg navbar-light bg-success">
+            <div class="container">
+                <a class="navbar-brand text-white" href="#">Huerto Hogar</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link text-white active" aria-current="page" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="Productos.html">Productos</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="registroUsuario.html">Registro</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="inicioSesionUsuario.html">Ingresar</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="container my-4">
+        <!-- Registro de usuario -->
+        <section class="container">
+            <div class="row mt-3">
+                <div class="col-lg-12 border p-4 rounded-4">
+                    <h2 class="text-center">Registro</h2>
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombres</label>
+                        <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre" length="50">
+                        <p id="error_nombre" class="mt-1" style="color: red; display: none;">* Debe ingresar un nombre
+                        </p>
+                        <p id="error_nombre_caracteres" class="mt-1" style="color: red; display: none;">* Debe ingresar
+                            un nombre válido</p>
+                        <p id="error_nombre_largo" class="mt-1" style="color: red; display: none;">* El nombre no debe
+                            exceder los 50 caracteres</p>
+                    </div>
+                    <div class="mb-3">
+                        <label for="apellidos" class="form-label">Apellidos</label>
+                        <input type="text" class="form-control" id="apellidos" placeholder="Ingrese apellidos">
+                        <p id="error_apellido" class="mt-1" style="color: red; display: none;">* Debe ingresar los
+                            apellidos</p>
+                        <p id="error_apellido_caracteres" class="mt-1" style="color: red; display: none;">* Debe
+                            ingresar los apellidos válidos</p>
+                        <p id="error_apellido_largo" class="mt-1" style="color: red; display: none;">* El apellido no
+                            debe exceder los 50 caracteres</p>
+                    </div>
+                    <div class="mb-3">
+                        <label for="apellido_paterno" class="form-label">Correo electrónico</label>
+                        <input type="email" class="form-control" id="correo"
+                            placeholder="Ingrese su correo electrónico">
+                        <p id="error_email" class="mt-1" style="color: red; display: none;">* Debe ingresar un correo
+                            electronico</p>
+                        <p id="error_email_invalido" class="mt-1" style="color: red; display: none;">* Debe ingresar un
+                            correo electronico válido</p>
+                    </div>
+                    <div class="mb-3">
+                        <label for="contraseña" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" id="password" placeholder="Ingrese contraseña">
+                        <p class="mt-1" style="color: red; display: none;">* Debe ingresar una contraseña</p>
+                    </div>
+                    <div class="mb-3">
+                        <label for="contraseña" class="form-label">Repita contraseña</label>
+                        <input type="password" class="form-control" id="password2" placeholder="Repita contraseña">
+                        <p class="mt-1" style="color: red; display: none;">* Debe ingresar una contraseña</p>
+                    </div>
+                    <div class="d-flex justify-content-end gap-2">
+                        <button type="submit" class="btn btn-success" onclick="registrarUsuario()"><i
+                                class="fa-solid fa-address-card"></i> Registrar</button>
+                        <button type="reset" class="btn btn-secondary"><i class="fa-solid fa-eraser"></i>
+                            Limpiar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="nosotros" class="my-5">
+            <h2 class="text-center mb-3">Nuestras Tiendas</h2>
+            <p class="text-center">
+                Tenemos tiendas en Santiago, Puerto Montt, Villarica, Nacimiento, Viña del Mar, Valparaíso y Concepción.
+            </p>
+
+            <!-- DIV para el mapa (Leaflet) -->
+            <div id="mapa" style="height: 450px;"></div>
+        </section>
+    </main>
+
+    <footer class="text-center mt-5 mb-3">
+        &copy; 2025 Huerto Hogar. Todos los derechos reservados.
+    </footer>
+
+    
+
+    <!-- Inicio de scripts -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/cc0673289f.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Leaflet JS -->
+    
+    
+</body>
+
+</html>

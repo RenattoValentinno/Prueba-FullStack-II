@@ -1,0 +1,58 @@
+/* Centrar logo del header */
+.header {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.logo {
+    width: 200px;
+    height: auto;
+}
+
+/* Body y fondo */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f7f7f7;
+    background-image: url('../images/Fondo.jpeg'); /* Ruta corregida */
+    background-repeat: repeat;        /* No repetir la imagen */
+    background-position: center top;     /* Centrar horizontal y arriba */
+    background-size: contain;            /* Ajusta el tamaño proporcional */
+}
+
+/* Encabezados */
+body h1,
+body h2 {
+    color: #925020;
+}
+
+/* Colores de clases */
+.interactiveElements {
+    color: #b33d0f;
+}
+
+.oferts {
+    color: #ffd700;
+}
+
+
+.input-angosto {
+    width: 250px;      /* Ajusta el ancho a tu gusto */
+    display: block;    /* Necesario para centrar con margin auto */
+    margin: 10px auto; /* Centra horizontalmente y agrega un poco de espacio arriba/abajo */
+}
+
+.boton-angosto {
+    width: 150px;      /* Ajusta el ancho del botón */
+    display: block;    /* Para centrar */
+    margin: 10px auto; /* Centra y agrega espacio */
+}
+
+.mapa-angosto {
+    width: 80%;       /* Ancho relativo al contenedor, ajusta al gusto */
+    max-width: 800px; /* Ancho máximo */
+    height: 450px;    /* Altura del mapa */
+    margin: 0 auto;   /* Centrar horizontalmente */
+    border: 2px solid #ccc; /* Opcional, borde para que se vea */
+}

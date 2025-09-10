@@ -1,73 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro de usuario</title>
-    <link rel="shortcut icon" href="assets/images/Logo.jpg" type="images/x-icon">
+    <title>Página de inicio - Huerto Hogar</title>
+    <link rel="shortcut icon" href="assets/images/Logo.jpeg" type="image/x-icon">
 
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="assets/css/styles.css">
 
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f7f7f7;
-            background-image: url(assets/images/fondo2.jpg);
-            background-repeat: repeat;
-            background-size: auto;
-        }
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-        body h1,
-        body h2 {
-            color: #8b4513;
-        }
-
-        .interactiveElements {
-            color: #2e8b57;
-        }
-
-        .oferts {
-            color: #ffd700;
-        }
-
-        .txtPrimary {
-            color: #333333;
-        }
-
-        .txtSecondary {
-            color: #666666;
-        }
-    </style>
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg bg-success">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#"><img src="assets/images/Logo.jpeg" alt="Logo" width="30" height="24"
-                        class="d-inline-block align-text-top">Huerto Hogar</a>
+    <!-- HEADER CON LOGO CENTRADO -->
+    <header class="text-center my-3">
+        <img src="assets/images/Logo.jpeg" alt="Logo" class="logo">
+        <nav class="navbar navbar-expand-lg navbar-light bg-success">
+            <div class="container">
+                <a class="navbar-brand text-white" href="#">Huerto Hogar</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
+                    <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                            <a class="nav-link text-white active" aria-current="page" href="index.html">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Productos</a>
+                            <a class="nav-link text-white" href="Productos.html">Productos</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Registro</a>
+                            <a class="nav-link text-white" href="registroUsuario.html">Registro</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Ingresar</a>
+                            <a class="nav-link text-white" href="inicioSesionUsuario.html">Ingresar</a>
                         </li>
                     </ul>
                 </div>
@@ -75,96 +51,84 @@
         </nav>
     </header>
 
-    <main>
-        <section class="container" id="Registro">
-            <div class="row mt-3">
-                <div class="col-xl-12"><!--Registro-->
-                    <h2 class="text-center">Autentificador</h2>
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Correo Electronico</label>
-                        <input type="text" class="form-control" id="Correo_Electronico" maxlength="15" 
-                            aria-describedby="emailHelp">
-                        <p id="error_correo" style="color: red; margin-top: 10px; display: none;">* Debe ingresar un
-                            Correo Electronico</p>
-                        <p id="error_correo_valido" style="color: red; margin-top: 10px; display: none;">* correo
-                            ingresado no es valido</p>
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Password</label>
-                        <input type="text" class="form-control" id="Password" maxlength="10"
-                            aria-describedby="emailHelp">
-                        <p id="error_password" style="color: red; margin-top: 10px; display: none;">* Debe ingresar un
-                            Password</p>
-                        <p id="error_password_valido" style="color: red; margin-top: 10px; display: none;">* Password
-                            ingresado no es valido</p>
-                    </div>
-                    <button type="button" class="btn btn-success"
-                        onclick="validarCorreo(), validarPassword(), validarPasswordrp()">Registrarse</button>
-                    <button type="button" class="btn btn-warning"
-                        onclick="limpiarCorreo(), limpiarPassword(), limpiarPasswordrp()">Limpiar</button>
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="container my-4">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+
+                <!--ENUNCIADO-->
+                <div class="mb-3">
+                    <section class="mb-5">
+                        <h2 class="text-center mb-3">Enunciado</h2>
+                        <p class="text-justify">
+                            HuertoHogar es una tienda online dedicada a llevar la frescura y calidad de los productos
+                            del campo directamente a la puerta de nuestros clientes en Chile. Con más de 6 años de experiencia,
+                            operamos en más de 9 puntos a lo largo del país, incluyendo ciudades clave como Santiago,
+                            Puerto Montt, Villarica, Nacimiento, Viña del Mar, Valparaíso, y Concepción.
+                            Nuestra misión es conectar a las familias chilenas con el campo, promoviendo un estilo
+                            de vida saludable y sostenible.
+                        </p>
+                    </section>
+                </div>
+
+                <!--MISION-->
+                <div class="mb-3">
+                    <section class="mb-5"></section>
+                        <h2 class="text-center mb-3">Misión</h2>
+                        <p class="text-justify">
+                            Nuestra misión es proporcionar productos frescos y de calidad directamente desde el campo
+                            hasta la puerta de nuestros clientes, garantizando la frescura y el sabor en cada entrega.
+                            Nos comprometemos a fomentar una conexión más cercana entre los consumidores y los agricultores
+                            locales, apoyando prácticas agrícolas sostenibles y promoviendo una alimentación saludable
+                            en todos los hogares chilenos.
+                        </p>
+                    </section>
+                </div>
+
+                <!--VISION-->
+                <div class="mb-3">
+                    <section class="mb-5">
+                        <h2 class="text-center mb-3">Visión</h2>
+                        <p class="text-justify">
+                            Nuestra visión es ser la tienda online líder en la distribución de productos frescos y naturales
+                            en Chile, reconocida por nuestra calidad excepcional, servicio al cliente y compromiso con la
+                            sostenibilidad. Aspiramos a expandir nuestra presencia a nivel nacional e internacional,
+                            estableciendo un nuevo estándar en la distribución de productos agrícolas directos
+                            del productor al consumidor.
+                        </p>
+                    </section>
                 </div>
             </div>
+        </div>
+        <section class="mb-3" id="nosotros" class="my-5">
+            <h2 class="text-center mb-3">Nuestras Tiendas</h2>
+            <p class="text-center">
+                Tenemos tiendas en Santiago, Puerto Montt, Villarica, Nacimiento, Viña del Mar, Valparaíso y Concepción.
+            </p>
+
+            <!-- DIV para el mapa (Leaflet) -->
+            <div id="mapa" class="mapa-angosto"></div>
         </section>
     </main>
 
-    <footer></footer>
 
-    <script>
-        function validarCorreo() {
 
-            var regexCorreo = /^[a-zA-Z ]+$/;
-            var txtCorreo = document.getElementById("Correo_Electronico").value;
-            const maxLength = 10;
+    <footer class="text-center mt-5 mb-3">
+        &copy; 2025 Huerto Hogar. Todos los derechos reservados.
+    </footer>
 
-            if (regexCorreo.test(txtCorreo)) {
-                console.log("Correo mal escrito");
-                document.getElementById("error_correo_valido").style.display = 'none';
-            } else {
-                console.log("Correo bien escrito");
-                document.getElementById("error_correo_valido").style.display = 'block';
-            }
+    
 
-            if (document.getElementById("Correo_Electronico").value == '') {
-                console.log("Campo vacio")
-                document.getElementById("error_correo").style.display = 'block';
-            } else {
-                document.getElementById("error_correo").style.display = 'none';
-            }
-
-        } function validarPassword() {
-
-            var regexPassword = /^[a-zA-Z ]+$/;
-            var txtPassword = document.getElementById("Password").value;
-
-            if (regexPassword.test(txtPassword)) {
-                console.log("password mal escrito");
-                document.getElementById("error_password_valido").style.display = 'none';
-            } else {
-                console.log("password bien escrito");
-                document.getElementById("error_password_valido").style.display = 'block';
-            }
-
-            if (document.getElementById("Password").value == '') {
-                console.log("Campo vacio")
-                document.getElementById("error_password").style.display = 'block';
-            } else {
-                document.getElementById("error_password").style.display = 'none';
-            }
-        }
-
-        function limpiarCorreo() {
-            document.getElementById("Correo_Electronico").value = "";
-        } function limpiarPassword() {
-            document.getElementById("Password").value = "";
-        } function limpiarPasswordrp() {
-            document.getElementById("Repetir_Password").value = "";
-        }
-
-    </script>
-
+    <!-- Inicio de scripts -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="assets/js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/cc0673289f.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Leaflet JS -->
+    
 </body>
 
 </html>
