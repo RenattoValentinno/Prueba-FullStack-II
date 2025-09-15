@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HuertoHogar · Frescura y Sostenibilidad</title>
+  <link rel="shortcut icon" href="assets/images/Logo.jpeg" type="image/x-icon">
+
+  <!-- CSS personalizado -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <!-- Librerías externas -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+ 
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <header class="text-center my-3">
+    <img src="assets/images/Logo.jpeg" alt="Logo HuertoHogar" class="logo mb-2" width="120">
+    <nav class="navbar navbar-expand-lg navbar-dark shadow-sm">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+          <span class="logo-badge"><i class="fa-solid fa-leaf"></i></span>
+          <span class="brand-title fw-bold">HuertoHogar</span>
+        </a>
+
+        <div class="d-flex gap-2 align-items-center ms-auto">
+          <a href="productos.html" class="btn btn-light">Productos</a>
+          <a href="nosotros.html" class="btn btn-light">Nosotros</a>
+          <a href="blog.html" class="btn btn-light">Blog</a>
+          <a href="contacto.html" class="btn btn-light">Contacto</a>
+          <a href="registro.html" class="btn btn-warning fw-bold">Iniciar / Registrar</a>
+          <a href="carrito.html" class="btn btn-outline-light position-relative">
+            🛒 Carrito
+            <span id="cart-count"
+              class="badge bg-dark position-absolute top-0 start-100 translate-middle">0</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <main class="container my-5">
+    <h1 class="text-center mb-4 section-title">Blog de HuertoHogar</h1>
+
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="card h-100 shadow-sm">
+          <img src="assets/images/blog1Real.avif" class="card-img-top" alt="Plato de comida saludable con vegetales">
+          <div class="card-body">
+            <h5 class="card-title">Beneficios de una Alimentación Basada en Productos Frescos</h5>
+            <p class="card-text">Descubre cómo incorporar frutas y verduras frescas en tu dieta puede mejorar tu salud y
+              bienestar.</p>
+            <a href="#" class="btn btn-success">Leer más</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card h-100 shadow-sm">
+          <img src="assets/images/nosotros2.jpeg" class="card-img-top"
+            alt="Agricultor en campo sostenible">
+          <div class="card-body">
+            <h5 class="card-title">HuertoHogar y el Compromiso con la Sostenibilidad</h5>
+            <p class="card-text">Conoce nuestras prácticas para apoyar a los agricultores locales y reducir nuestro
+              impacto ambiental. En HuertoHogar creemos que cada decisión cuenta, por eso trabajamos junto a pequeños
+              productores que cultivan con métodos responsables, cuidando la tierra y respetando los ciclos naturales de
+              cada producto.</p>
+            <a href="#" class="btn btn-success">Leer más</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card h-100 shadow-sm">
+          <img src="assets/images/receta.jpg" class="card-img-top"
+            alt="Receta con ingredientes frescos de temporada">
+          <div class="card-body">
+            <h5 class="card-title">Recetas Fáciles con Ingredientes de Temporada</h5>
+            <p class="card-text">Inspiración culinaria para disfrutar de los sabores del campo en tu hogar.</p>
+            <a href="#" class="btn btn-success">Leer más</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card h-100 shadow-sm">
+          <img src="assets/images/blog4.jpg" class="card-img-top"
+            alt="Agricultores trabajando en comunidad">
+          <div class="card-body">
+            <h5 class="card-title">Conectando Comunidades: Historias de Nuestros Agricultores</h5>
+            <p class="card-text">Conoce a las personas detrás de los productos que llegan a tu mesa.</p>
+            <a href="#" class="btn btn-success">Leer más</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="main-footer py-4 mt-5 border-top">
+    <div class="container text-center">
+      <strong>HuertoHogar</strong> · Frescura y sostenibilidad<br>
+      <small>Santiago · Puerto Montt · Villarica · Nacimiento · Viña del Mar · Valparaíso · Concepción</small>
+      <div class="mt-3">
+        <a href="#"><i class="fab fa-facebook fa-lg mx-2"></i></a>
+        <a href="#"><i class="fab fa-instagram fa-lg mx-2"></i></a>
+        <a href="#"><i class="fab fa-twitter fa-lg mx-2"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

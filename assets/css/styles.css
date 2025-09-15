@@ -15,16 +15,53 @@ body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f7f7f7;
-    background-image: url('../images/Fondo.jpeg'); /* Ruta corregida */
-    background-repeat: repeat;        /* No repetir la imagen */
-    background-position: center top;     /* Centrar horizontal y arriba */
-    background-size: contain;            /* Ajusta el tamaño proporcional */
+    background-image: url('../images/Fondo.jpeg');
+    /* Ruta corregida */
+    background-repeat: repeat;
+    /* No repetir la imagen */
+    background-position: center top;
+    /* Centrar horizontal y arriba */
+    background-size: contain;
+    /* Ajusta el tamaño proporcional */
 }
 
 /* Encabezados */
 body h1,
 body h2 {
     color: #925020;
+    /* Color café elegante */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Tipografía moderna */
+    font-size: 28px;
+    /* Un poco más grande */
+    font-weight: 700;
+    /* Más grueso */
+    text-align: center;
+    /* Centrado */
+    margin: 20px 0;
+    /* Espaciado arriba/abajo */
+    letter-spacing: 1px;
+    /* Espaciado entre letras */
+    text-transform: uppercase;
+    /* Mayúsculas para resaltar */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    /* Sombra suave */
+    border-bottom: 3px solid #28a745;
+    /* Línea verde debajo */
+    display: inline-block;
+    /* Para que la línea solo ocupe el ancho del texto */
+    padding-bottom: 5px;
+}
+
+#map h2 {
+    text-align: center;
+    /* Centra el título */
+    margin-bottom: 15px;
+    /* Espacio con el mapa */
+    color: #925020;
+    /* Tu color personalizado */
+    font-size: 26px;
+    font-weight: bold;
 }
 
 /* Colores de clases */
@@ -36,23 +73,123 @@ body h2 {
     color: #ffd700;
 }
 
+.label-angosto {
+    display: block;
+    /* Hace que el label ocupe una línea */
+    width: 250px;
+    /* Mismo ancho que el input */
+    margin: 10px auto 5px auto;
+    /* Centrado horizontal y espacio arriba/abajo */
+    font-weight: 600;
+    /* Más fuerte para destacar */
+    color: #333;
+    /* Color agradable */
+    text-align: center;
+    /* Centra el texto */
+    font-size: 14px;
+    /* Tamaño legible */
+}
 
 .input-angosto {
-    width: 250px;      /* Ajusta el ancho a tu gusto */
-    display: block;    /* Necesario para centrar con margin auto */
-    margin: 10px auto; /* Centra horizontalmente y agrega un poco de espacio arriba/abajo */
+    width: 250px;
+    /* Ancho fijo */
+    display: block;
+    /* Para centrar */
+    margin: 15px auto;
+    /* Centrado con espacio */
+    padding: 10px 15px;
+    /* Espacio dentro del input */
+    border: 2px solid #ccc;
+    /* Borde gris claro */
+    border-radius: 8px;
+    /* Bordes redondeados */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Sombra suave */
+    font-size: 16px;
+    /* Texto más grande y legible */
+    transition: all 0.3s ease;
+    /* Transición suave para efectos */
+}
+
+/* Efecto al enfocar el input */
+.input-angosto:focus {
+    border-color: #28a745;
+    /* Borde verde */
+    box-shadow: 0 0 8px rgba(40, 167, 69, 0.3);
+    /* Sombra verde suave */
+    outline: none;
+    /* Quitar el borde azul por defecto */
 }
 
 .boton-angosto {
-    width: 150px;      /* Ajusta el ancho del botón */
-    display: block;    /* Para centrar */
-    margin: 10px auto; /* Centra y agrega espacio */
+    width: 150px;
+    /* Ajusta el ancho del botón */
+    display: block;
+    /* Para centrar */
+    margin: 10px auto;
+    /* Centra y agrega espacio */
 }
 
 .mapa-angosto {
-    width: 80%;       /* Ancho relativo al contenedor, ajusta al gusto */
-    max-width: 800px; /* Ancho máximo */
-    height: 450px;    /* Altura del mapa */
-    margin: 0 auto;   /* Centrar horizontalmente */
-    border: 2px solid #ccc; /* Opcional, borde para que se vea */
+    width: 80%;
+    /* Ancho relativo al contenedor, ajusta al gusto */
+    max-width: 800px;
+    /* Ancho máximo */
+    height: 450px;
+    /* Altura del mapa */
+    margin: 0 auto;
+    /* Centrar horizontalmente */
+    border: 2px solid #ccc;
+    /* Opcional, borde para que se vea */
 }
+
+.navbar {
+    background: linear-gradient(90deg, #2e7d32, #66bb6a);
+}
+
+.logo-badge {
+    font-size: 40px;
+    color: white;
+}
+
+/* Cards alineadas */
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Footer */
+.main-footer {
+    background: #2e7d32;
+    color: white;
+}
+
+.main-footer a {
+    color: white;
+    text-decoration: none;
+}
+
+.main-footer a:hover {
+    color: #c8e6c9;
+}
+
+
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #333333;
+    /* Texto principal */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Playfair Display', serif;
+    color: #8B4513;
+    /* Marrón Claro para títulos */
+}
+

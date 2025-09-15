@@ -19,38 +19,31 @@
 </head>
 
 <body>
-    <!-- HEADER CON LOGO CENTRADO -->
-    <header class="text-center my-3">
-        <img src="assets/images/Logo.jpeg" alt="Logo" class="logo">
-        <nav class="navbar navbar-expand-lg navbar-light bg-success">
-            <div class="container">
-                <a class="navbar-brand text-white" href="#">Huerto Hogar</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav me-auto">
-                        <li class="nav-item">
-                            <a class="nav-link text-white active" aria-current="page" href="index.html">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="Productos.html">Productos</a>
-                        </li>
-                    </ul>
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="registroUsuario.html">Registro</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="inicioSesionUsuario.html">Ingresar</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
+    <!-- NAVBAR -->
+  <header class="text-center my-3">
+    <img src="assets/images/Logo.jpeg" alt="Logo HuertoHogar" class="logo mb-2" width="120">
+    <nav class="navbar navbar-expand-lg navbar-dark shadow-sm">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+          <span class="logo-badge"><i class="fa-solid fa-leaf"></i></span>
+          <span class="brand-title fw-bold">HuertoHogar</span>
+        </a>
 
+        <div class="d-flex gap-2 align-items-center ms-auto">
+          <a href="productos.html" class="btn btn-light">Productos</a>
+          <a href="nosotros.html" class="btn btn-light">Nosotros</a>
+          <a href="blog.html" class="btn btn-light">Blog</a>
+          <a href="contacto.html" class="btn btn-light">Contacto</a>
+          <a href="registro.html" class="btn btn-warning fw-bold">Iniciar / Registrar</a>
+          <a href="carrito.html" class="btn btn-outline-light position-relative">
+            🛒 Carrito
+            <span id="cart-count"
+              class="badge bg-dark position-absolute top-0 start-100 translate-middle">0</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+  </header>
     <!-- CONTENIDO PRINCIPAL -->
     <main class="container my-4">
         <div class="row justify-content-center">
@@ -62,7 +55,8 @@
                         <h2 class="text-center mb-3">Enunciado</h2>
                         <p class="text-justify">
                             HuertoHogar es una tienda online dedicada a llevar la frescura y calidad de los productos
-                            del campo directamente a la puerta de nuestros clientes en Chile. Con más de 6 años de experiencia,
+                            del campo directamente a la puerta de nuestros clientes en Chile. Con más de 6 años de
+                            experiencia,
                             operamos en más de 9 puntos a lo largo del país, incluyendo ciudades clave como Santiago,
                             Puerto Montt, Villarica, Nacimiento, Viña del Mar, Valparaíso, y Concepción.
                             Nuestra misión es conectar a las familias chilenas con el campo, promoviendo un estilo
@@ -74,14 +68,14 @@
                 <!--MISION-->
                 <div class="mb-3">
                     <section class="mb-5"></section>
-                        <h2 class="text-center mb-3">Misión</h2>
-                        <p class="text-justify">
-                            Nuestra misión es proporcionar productos frescos y de calidad directamente desde el campo
-                            hasta la puerta de nuestros clientes, garantizando la frescura y el sabor en cada entrega.
-                            Nos comprometemos a fomentar una conexión más cercana entre los consumidores y los agricultores
-                            locales, apoyando prácticas agrícolas sostenibles y promoviendo una alimentación saludable
-                            en todos los hogares chilenos.
-                        </p>
+                    <h2 class="text-center mb-3">Misión</h2>
+                    <p class="text-justify">
+                        Nuestra misión es proporcionar productos frescos y de calidad directamente desde el campo
+                        hasta la puerta de nuestros clientes, garantizando la frescura y el sabor en cada entrega.
+                        Nos comprometemos a fomentar una conexión más cercana entre los consumidores y los agricultores
+                        locales, apoyando prácticas agrícolas sostenibles y promoviendo una alimentación saludable
+                        en todos los hogares chilenos.
+                    </p>
                     </section>
                 </div>
 
@@ -90,8 +84,10 @@
                     <section class="mb-5">
                         <h2 class="text-center mb-3">Visión</h2>
                         <p class="text-justify">
-                            Nuestra visión es ser la tienda online líder en la distribución de productos frescos y naturales
-                            en Chile, reconocida por nuestra calidad excepcional, servicio al cliente y compromiso con la
+                            Nuestra visión es ser la tienda online líder en la distribución de productos frescos y
+                            naturales
+                            en Chile, reconocida por nuestra calidad excepcional, servicio al cliente y compromiso con
+                            la
                             sostenibilidad. Aspiramos a expandir nuestra presencia a nivel nacional e internacional,
                             estableciendo un nuevo estándar en la distribución de productos agrícolas directos
                             del productor al consumidor.
@@ -100,15 +96,17 @@
                 </div>
             </div>
         </div>
-        <section class="mb-3" id="nosotros" class="my-5">
+
+        <section id="map" class="my-5">
             <h2 class="text-center mb-3">Nuestras Tiendas</h2>
             <p class="text-center">
                 Tenemos tiendas en Santiago, Puerto Montt, Villarica, Nacimiento, Viña del Mar, Valparaíso y Concepción.
             </p>
 
             <!-- DIV para el mapa (Leaflet) -->
-            <div id="mapa" class="mapa-angosto"></div>
+            <div id="mapid" class="mapa-angosto"></div>
         </section>
+
     </main>
 
 
@@ -117,7 +115,7 @@
         &copy; 2025 Huerto Hogar. Todos los derechos reservados.
     </footer>
 
-    
+
 
     <!-- Inicio de scripts -->
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
@@ -128,7 +126,7 @@
     <script src="https://kit.fontawesome.com/cc0673289f.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Leaflet JS -->
-    
+
 </body>
 
 </html>

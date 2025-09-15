@@ -62,26 +62,25 @@ function validarCorreo(correo) {
     }
 }
 
-// Inicializar mapa
-var map = L.map('mapa').setView([-33.4489, -70.6693], 5); // Centro en Chile
+document.addEventListener('DOMContentLoaded', function() {
+    var map = L.map('mapid').setView([-33.4489, -70.6693], 5);
 
-// Tiles de OpenStreetMap
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '© OpenStreetMap contributors'
-}).addTo(map);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
 
-// Agregar marcadores
-var ciudades = [
-    { nombre: "Santiago", lat: -33.4489, lng: -70.6693 },
-    { nombre: "Puerto Montt", lat: -41.4693, lng: -72.9425 },
-    { nombre: "Villarica", lat: -39.2536, lng: -72.2300 },
-    { nombre: "Nacimiento", lat: -37.5500, lng: -72.4167 },
-    { nombre: "Viña del Mar", lat: -33.0245, lng: -71.5515 },
-    { nombre: "Valparaíso", lat: -33.0458, lng: -71.6197 },
-    { nombre: "Concepción", lat: -36.8201, lng: -73.0444 }
-];
+    var ciudades = [
+        { nombre: "Santiago", lat: -33.4489, lng: -70.6693 },
+        { nombre: "Puerto Montt", lat: -41.4693, lng: -72.9425 },
+        { nombre: "Villarica", lat: -39.2536, lng: -72.2300 },
+        { nombre: "Nacimiento", lat: -37.5500, lng: -72.4167 },
+        { nombre: "Viña del Mar", lat: -33.0245, lng: -71.5515 },
+        { nombre: "Valparaíso", lat: -33.0458, lng: -71.6197 },
+        { nombre: "Concepción", lat: -36.8201, lng: -73.0444 }
+    ];
 
-ciudades.forEach(function(ciudad) {
-    L.marker([ciudad.lat, ciudad.lng]).addTo(map)
-        .bindPopup(ciudad.nombre);
+    ciudades.forEach(function(ciudad) {
+        L.marker([ciudad.lat, ciudad.lng]).addTo(map)
+            .bindPopup(ciudad.nombre);
+    });
 });
